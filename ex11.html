@@ -1,0 +1,35 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Nacionalidade</title>
+</head>
+<body>
+    <form id="formNacionalidade">
+        <label for="Inac">Digite sua nacionalidade:</label>
+        <input type="text" id="Inac" name="nacionalidade">
+        <button type="button" onclick="calcular()">Verificar</button>
+    </form>
+    
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            let Iname = document.querySelector('input#Inac').value.trim(); // Obtém o valor digitado no input e remove espaços em branco
+            let res = document.querySelector('div#res');
+
+            // Verifica se o campo de entrada está vazio
+            if (Iname === "") {
+                res.innerHTML = "<p>Por favor, digite sua nacionalidade.</p>";
+            } else {
+                // Verifica se a nacionalidade é brasileira
+                if (Iname.toLowerCase() === "brasil" || Iname.toLowerCase() === "brasileira") {
+                    res.innerHTML = "<p>Você é brasileiro(a).</p>";
+                } else {
+                    res.innerHTML = "<p>Você é estrangeiro(a).</p>";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
