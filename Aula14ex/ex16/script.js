@@ -12,6 +12,7 @@ function verificar() {
 
     // Verificar se os valores são válidos
     if (isNaN(inicio) || isNaN(fim) || isNaN(passo) || passo <= 0) {
+        res.innerHTML = 'Impossível contar'
         alert('Por favor, insira valores válidos.');
     } else { 
         res.innerHTML = 'Contando: ';
