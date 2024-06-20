@@ -3,6 +3,7 @@ function verificar() {
     let inicio = document.getElementById('ini').value;
     let fim = document.getElementById('fim').value;
     let passo = document.getElementById('passo').value;
+    let res = document.getElementById('res');
     
     // Convertendo valores para números
     inicio = Number(inicio);
@@ -10,19 +11,21 @@ function verificar() {
     passo = Number(passo);
 
     // Verificar se os valores são válidos
-    if (inicio === '' || fim === '' || passo === '' || passo <= 0) {
+    if (isNaN(inicio) || isNaN(fim) || isNaN(passo) || passo <= 0) {
         alert('Por favor, insira valores válidos.');
-        return;
+    } else { 
+        res.innerHTML = 'Contando: ';
+        if (inicio < fim) {
+            // Contagem crescente 
+            for (let i = inicio; i <= fim; i += passo) {
+                res.innerHTML += `${i} \u{1F449}`;
+            }
+        } else {
+            // Contagem decrescente
+            for (let i = inicio; i >= fim; i -= passo) {
+                res.innerHTML += `${i} \u{1F449}`;
+            }
+        }
+        res.innerHTML += '\u{1F3C1}';  // Bandeira de chegada
     }
-
-    // Inicializar a variável de resultado
-    let resultado = '';
-
-    // Gerar a sequência de números
-    for (let i = inicio; i <= fim; i += passo) {
-        resultado += i + ' ';
-    }
-
-    // Exibir o resultado
-    document.querySelector('.res').innerText = resultado;
 }
