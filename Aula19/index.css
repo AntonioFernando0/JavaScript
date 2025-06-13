@@ -1,0 +1,23 @@
+#titulo {
+    text-align: center;
+    font-size: 24px; /* Defina um valor! Exemplo: 24px, 2em etc. */
+}
+
+body {
+    background-color: azure;
+    font-family: Arial, sans-serif;
+}
+
+.campo {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo input {
+    width: 100%;              /* preenche o espaço do container pai */
+    max-width: 300px;         /* impede que fique muito largo */
+    padding: 6px;
+    border: 1px solid #888;
+    border-radius: 4px;
+}
