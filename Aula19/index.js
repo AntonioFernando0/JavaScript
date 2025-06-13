@@ -12,12 +12,17 @@ function verificar(){
 
     let media = (nota1 + nota2 + nota3) / 3
 
-    if(media >= 7){
-        alert("PARABÉNS. VOCÊ ESTÁ APROVADO")
-    }else if (media >= 4 && media < 7){
-        alert("VOCÊ ESTÁ EM RECUPERAÇÃO")
-    }else{
-        alert("VOCÊ ESTÁ REPROVADO")
-    }
+    let mensagem = ""
 
+    if(media >= 7){
+        mensagem = "🎉 PARABÉNS. VOCÊ ESTÁ APROVADO";
+        
+    }else if (media >= 4 && media < 7){
+        mensagem = "⚠️ VOCÊ ESTÁ EM RECUPERAÇÃO";
+    }else{
+       
+        mensagem = "❌ VOCÊ ESTÁ REPROVADO";
+    }
+    document.getElementById('apr').innerText = mensagem;
 }
+
