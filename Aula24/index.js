@@ -30,3 +30,19 @@ async function buscarMensagem(){
 }
 
 buscarMensagem()
+
+
+async function buscarUsuario() {
+    const mensagem = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const data = {id: 1,  name: 'John', email: 'joao@email.com'}
+                resolve(data)
+            }, 2000);  
+    });
+    const resultado = await mensagem
+
+    console.log("Usúario buscado com sucesso!")
+    console.log(resultado);
+    
+}
+buscarUsuario()
